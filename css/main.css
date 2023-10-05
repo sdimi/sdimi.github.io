@@ -7,6 +7,13 @@ a:hover {
    color: #223490;
 }
 
+/* added space between the papers (padding-top) */
+.media {
+    margin-top: 15px;
+    padding-top: 40px;
+
+}
+
 .alert-warning {
     /* color: #8a6d3b; */
     color: #425466d1;
