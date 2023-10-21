@@ -25,10 +25,10 @@
 
     <div class="row" style="padding:20px">
 
-      <!-- we hide the navbar in xs and sm breakpoints  -->
-       <div class="hidden-xs hidden-sm col-sm-3 col-md-2" id="sidebar" role="navigation" style="margin-top:170px">
+      <!-- we hide the navbar in xs and sm breakpoints. Added a position relative to fix the navbar (also added a fixed inside the navbar below, see: https://jsfiddle.net/KyleMit/3RkM3)  -->
+       <div class="hidden-xs hidden-sm col-sm-3 col-md-2" id="sidebar" role="navigation" style="margin-top:170px; position: relative;">
         <hr>
-        <ul class="nav nav-pills nav-stacked">
+        <ul class="nav nav-pills nav-stacked" style="position: fixed;">
           <li><a href="#about">About</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#service">Service</a></li>
