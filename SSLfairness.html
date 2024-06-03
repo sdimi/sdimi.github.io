@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Using Self-supervised Learning can Improve Model Fairness.">
+  <meta name="keywords" content="SSL, Self-supervised learning, fairness, bias, pre-training, fine-tuning, human-centric data, sensing data">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Using Self-Supervised Learning can Improve Model Fairness</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./projects/SSLfairness/static/css/bulma.min.css">
+  <link rel="stylesheet" href="./projects/SSLfairness/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./projects/SSLfairness/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./projects/SSLfairness/static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./projects/SSLfairness/static/css/index.css">
+  <link rel="icon" href="./projects/SSLfairness/static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./projects/SSLfairness/static/js/fontawesome.all.min.js"></script>
+  <script src="./projects/SSLfairness/static/js/bulma-carousel.min.js"></script>
+  <script src="./projects/SSLfairness/static/js/bulma-slider.min.js"></script>
+  <script src="./projects/SSLfairness/static/js/index.js"></script>
+
+  
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="./index.html">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+  
+
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Using Self-Supervised Learning Can Improve Model Fairness</h1>
+          <h2 class="title is-4">KDD 2024</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=zuHDFY8AAAAJ&hl=en">Sofia Yfantidou</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="./index.html">Dimitris Spathis</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="http://www.comarios.com/">Marios Constantinides</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://datalab.csd.auth.gr/avakali/">Athena Vakali</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://researchswinger.org/">Daniele Quercia</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.fahim-kawsar.net/">Fahim Kawsar</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Nokia Bell Labs</span>
+            <span class="author-block"><sup>2</sup>Aristotle University of Thessaloniki</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/XXXXXX"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+           
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/XXXXX"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+             
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <img src="projects/SSLfairness/static/images/framework.png"  class="center"/>
+      <h2 class="subtitle has-text-centered">
+      
+         Starting from appropriate benchmark selection, we systematically study the impact of pre-training and fine-tuning on algorithmic fairness using a new combination of evaluation and representation learning metrics.
+      
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+            <p>
+              <b>Self-supervised learning (SSL) has emerged as the de facto training paradigm for large models</b>, where pre-training is followed by supervised fine-tuning using domain-specific data and labels. Despite achieving comparable performance to supervised methods, comprehensive efforts to assess SSL's impact on machine learning fairness (i.e., performing equally across different demographic groups) are lacking. <b>With the hypothesis that SSL models would learn more generic, and hence less biased, representations</b>, this work explores the impact of pre-training and fine-tuning strategies on fairness.
+            </p>
+            
+            <p>We introduce a fairness assessment framework for SSL, comprising five stages: defining dataset requirements, pre-training, fine-tuning with gradual unfreezing, assessing representation similarity conditioned on demographics, and establishing domain-specific evaluation processes. To evaluate our method's generalizability, <b>we systematically compare hundreds of SSL and fine-tuned models across various dimensions</b>, spanning from intermediate representations to appropriate evaluation metrics, on three real-world human-centric datasets (<a
+              href="https://www.nature.com/articles/sdata201635">MIMIC</a>, <a
+              href="https://sleepdata.org/datasets/mesa">MESA</a>, and <a
+              href="https://the-globem.github.io/">GLOBEM</a>).
+
+          </p>
+          <p>
+            Our findings demonstrate that <b>SSL can significantly improve model fairness</b>, while maintaining performance on par with supervised methods, <b>exhibiting up to a 30% increase in fairness with minimal loss in performance</b> through self-supervision. We posit that such differences can be attributed to representation dissimilarities found between the best- and the worst-performing demographics across models - up to 13 times greater for protected attributes with larger performance discrepancies between segments.
+          </p>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">     
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- Parity plots -->
+        <h3 class="title is-4">What is the optimal level of fine-tuning for fairness?</h3>
+        <div class="content has-text-justified">
+          <img src="projects/SSLfairness/static/images/Ushapes.png"  class="center"/>
+          <p>
+            Relationship between fairness (deviation from parity) and fine-tuning strategies, as a function of model size. The purely supervised model has a greater deviation from parity, i.e., increased bias, (dashed line) compared to the best-performing fine-tuned model (i.e., 1 •◦•) that has been pre-trained before. The observed “U-shape” patterns in MIMIC and GLOBEM datasets suggest an optimal level of fine-tuning.
+          </p>
+        </div>
+
+        <h3 class="title is-4">Are these models also accurate?</h3>
+        <div class="content has-text-justified">
+          <img src="projects/SSLfairness/static/images/AUCs.png"  class="center"/>
+          <p>
+            AUC-ROC curves across datasets and fine-tuning strategies. The purely supervised models show superior performance, but are closely followed by fine-tuned ones, e.g., 1 (•◦•). The level of post-SSL fine-tuning greatly affects the observed performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light ">
+  <div class="hero-body is-centered">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-4">SSL is fairer with minority segments</h3>
+          <p>
+            The left figure shows the relationship between segment size and performance (AUC-ROC) across datasets. The smaller the segment, the larger the performance discrepancies. Fitted lowess curves show that SSL lies closer to the “fair” (dashed) line.
+          </p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-4">SSL is fairer when tuned with more labels</h3>
+          <p>
+            The right figure shows fairness as a function of fine-tuning labelled data in the MIMIC dataset. The SSL model achieves higher fairness in the low-label regime as well as with access to more labels for fine-tuning.
+          </p>
+         
+        </div>
+      </div>
+     
+      </div>
+      <img src="projects/SSLfairness/static/images/samplesANDsegments.png"  style="padding: 0rem 3rem;"/>
+      </div>
+    </div>
+</section>
+
+
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <h3 class="title is-4">Conditioned Representation Similarity for layer-level comparisons across subgroups</h3>
+      <div id="results-carousel" class="is-centered carousel results-carousel">
+       
+        <div class="item" >
+          <img  src="projects/SSLfairness/static/images/heatmap1.png"/>
+          
+        </div>
+
+        <div class="item" >
+          <img src="projects/SSLfairness/static/images/heatmap2.png"/>
+        </div>
+
+        <div class="item">
+          <img src="projects/SSLfairness/static/images/heatmap3.png"/>
+        </div>
+
+        <div class="item">
+          <img src="projects/SSLfairness/static/images/heatmap4.png"/>
+        </div>
+      </div>
+      <p>
+        We develop "Conditioned Representation Similarity" to compare subgroups on the representation/layer level by extending <a href="https://arxiv.org/abs/1905.00414">Centered Kernel Alignment (CKA)</a>. Here we show results from MIMIC comparing a supervised to the best fine-tuned SSL model, with every figure corresponding to language, gender, race, and insurance groups (please click the arrows above). In every figure, the first heatmap shows a balanced random subset, while the second and third show the worst and best groups respectively, followed by their delta. Across all groups, we observe that the best-performing groups have higher representation similarity. The higher the performance gap between segments, the larger the representation gap.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">     
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- Parity plots -->
+        <h3 class="title is-4">Discussion</h3>
+        <div class="content has-text-justified">
+          <p>
+            The focus of this work is on evaluating how design choices in SSL impact fairness, rather than proposing new fairness mitigation algorithms. However, our SSL framework parallels implicit <a href="https://miro.medium.com/v2/resize:fit:1400/1*dGnc87wbIKB2ZuyYDJi-Fw.png">fairness mitigation</a> methods. For instance, the pre-training phase acts akin to
+        <i>pre-processing</i>, practically removing discriminatory associations by learning from unlabeled data that are not paired with outcomes. The subsequent fine-tuning phase operates like an <i>in-processing</i> method, controlling the regularization effect on the model's accuracy. However, it is essential to acknowledge that SSL alone may not eliminate all disparities, especially when trained on poor-quality or biased data.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{yfantidou24kdd,
+      title =      {Using Self-supervised Learning can Improve Model Fairness},
+      author =     {Sofia Yfantidou, Dimitris Spathis, Marios Constantinides, Athena Vakali, Daniele Quercia, Fahim Kawsar},
+      booktitle =  {Proceedings of the ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+      year =       {2024}
+      }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      
+        <div class="content">
+          
+          <p>
+            The template of this website is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
