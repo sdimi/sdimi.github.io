@@ -221,27 +221,36 @@
   <div class="container is-max-desktop">
     <h3 class="title is-4">Conditioned Representation Similarity for layer-level comparisons across subgroups</h3>
       <div id="results-carousel" class="is-centered carousel results-carousel">
-       
+        
         <div class="item" >
+          <p class="subtitle has-text-centered">Language performance gap (b-c) = 1%</p>
           <img  src="projects/SSLfairness/static/images/heatmap1.png"/>
-          
+        
         </div>
+      
+       
 
         <div class="item" >
+          <p class="subtitle has-text-centered">Gender performance gap (f-g) = 3%</p>
           <img src="projects/SSLfairness/static/images/heatmap2.png"/>
         </div>
 
         <div class="item">
+          <p class="subtitle has-text-centered">Race performance gap (j-k) = 19%</p>
           <img src="projects/SSLfairness/static/images/heatmap3.png"/>
         </div>
 
         <div class="item">
+          <p class="subtitle has-text-centered">Insurance performance gap (n-o) = 20%</p>
           <img src="projects/SSLfairness/static/images/heatmap4.png"/>
         </div>
       </div>
       <p>
-        We develop "Conditioned Representation Similarity" to compare subgroups on the representation/layer level by extending <a href="https://arxiv.org/abs/1905.00414">Centered Kernel Alignment (CKA)</a>. Here we show results from MIMIC comparing a supervised to the best fine-tuned SSL model, with every figure corresponding to language, gender, race, and insurance groups (please click the arrows above). In every figure, the first heatmap shows a balanced random subset, while the second and third show the worst and best groups respectively, followed by their delta. Across all groups, we observe that the best-performing groups have higher representation similarity. The higher the performance gap between segments, the larger the representation gap.
+        We developed "Conditioned Representation Similarity" to compare subgroups on the representation/layer level by extending <a href="https://arxiv.org/abs/1905.00414">Centered Kernel Alignment (CKA)</a>. Here we show results from MIMIC comparing the best supervised and fine-tuned SSL models, with every figure corresponding to language, gender, race, and insurance groups (please click the arrows above). The first heatmap shows a balanced random subset, while the second and third show the worst and best groups respectively, followed by their delta. </p>
+        
+        <p>Across the board, for the best-performing groups, both the SSL and supervised models not only excel in performance but also exhibit strikingly similar representations. On the other hand, for the worst-performing groups, the representations diverge notably. The higher the performance gap between segments, the larger the representation gap. To paraphrase Tolstoy's <a href="https://en.wikipedia.org/wiki/Anna_Karenina_principle">Anna Karenina principle</a> (<i>All happy families are alike; each unhappy family is unhappy in its own way</i>): Representations of accurate subgroups are alike; each underperforming one is different in its own way.
       </p>
+
     </div>
   </div>
 </section>
