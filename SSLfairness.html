@@ -139,7 +139,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
             <p>
-              <b>Self-supervised learning (SSL) has emerged as the de facto training paradigm for large models</b>, where pre-training is followed by supervised fine-tuning using domain-specific data and labels. Despite achieving comparable performance to supervised methods, comprehensive efforts to assess SSL's impact on machine learning fairness (i.e., performing equally across different demographic groups) are lacking. <b>With the hypothesis that SSL models would learn more generic, and hence less biased, representations</b>, this work explores the impact of pre-training and fine-tuning strategies on fairness.
+              <b>Self-supervised learning (SSL) has emerged as the de facto training paradigm for large models</b>, where pre-training is followed by supervised fine-tuning using domain-specific data and labels. Despite achieving comparable performance to supervised methods, comprehensive efforts to assess SSL's impact on machine learning fairness (i.e., performing equally across different demographic groups) are lacking. <b>With the hypothesis that SSL models would learn more generic, and hence less biased representations</b>, this work explores the impact of pre-training and fine-tuning strategies on fairness.
             </p>
             
             <p>We introduce a fairness assessment framework for SSL, comprising five stages: defining dataset requirements, pre-training, fine-tuning with gradual unfreezing, assessing representation similarity conditioned on demographics, and establishing domain-specific evaluation processes. To evaluate our method's generalizability, <b>we systematically compare hundreds of SSL and fine-tuned models across various dimensions</b>, spanning from intermediate representations to appropriate evaluation metrics, on three real-world human-centric datasets (<a
@@ -267,7 +267,7 @@
         <h3 class="title is-4">Discussion</h3>
         <div class="content has-text-justified">
           <p>
-            The focus of this work is on evaluating how design choices in SSL impact fairness, rather than proposing new bias mitigation <a href="https://github.com/Trusted-AI/AIF360?tab=readme-ov-file#supported-bias-mitigation-algorithms">algorithms</a>. However, our SSL framework parallels implicit <a href="https://miro.medium.com/v2/resize:fit:1400/1*dGnc87wbIKB2ZuyYDJi-Fw.png">bias mitigation</a> methods. For instance, the pre-training phase acts akin to
+            The focus of this work is onφ evaluating how design choices in SSL impact fairness, rather than proposing new bias mitigation <a href="https://github.com/Trusted-AI/AIF360?tab=readme-ov-file#supported-bias-mitigation-algorithms">algorithms</a>. However, our SSL framework parallels implicit <a href="https://miro.medium.com/v2/resize:fit:1400/1*dGnc87wbIKB2ZuyYDJi-Fw.png">bias mitigation</a> methods. For instance, the pre-training phase acts akin to
         <i>pre-processing</i>, practically removing discriminatory associations by learning from unlabeled data that are not paired with outcomes. The subsequent fine-tuning phase operates like an <i>in-processing</i> method, controlling the regularization effect on the model's accuracy. However, it is essential to acknowledge that SSL alone may not eliminate all disparities, especially when trained on poor-quality or biased data.
           </p>
         </div>
