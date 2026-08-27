@@ -1,89 +1,324 @@
-a {
-  color: #5469d4;
-  font-weight: 500;
+/* * PRACTICAL TYPOGRAPHY REDESIGN * */
+
+:root {
+  --bg-color: #fdfdfc;
+  --text-main: #1a1a1a;
+  --text-muted: #555555;
+  --link-color: #0056b3;
+  --link-hover: #003366;
+  
+  --font-body: 'Charter', 'Bitstream Charter', 'Source Serif Pro', 'Georgia', serif;
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
-
-a:hover {
-   color: #223490;
-}
-
-/* added space between the papers (padding-top) */
-.media {
-    margin-top: 15px;
-    padding-top: 40px;
-
-}
-
-.alert-warning {
-    /* color: #8a6d3b; */
-    color: #425466d1;
-    border: solid 1px #ccc;
-    background-color: #ffffff;
-    }
 
 body {
-	background-color: #fbfdff;
-    /* 425466 is grayer, 425466d1 lighter */
-	color: #425466d1;
-	font-size: 17px;
-	line-height: 1.58;
-    letter-spacing: -.003em;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
- Helvetica, Arial, sans-serif, Roboto,
- "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 18px; 
+  line-height: 1.45; 
+  margin: 0;
+  padding: 4rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.caps {
-    font-variant-caps: all-small-caps;
-
-}
-
-@media (min-width: 992px){
-.col-md-9 {
-    width: 65%;
-	}
-}
-
-a:hover, a:focus {
-    text-decoration: none;
-}
-
-img {
-    border: solid 1px #ccc; 
-    margin-bottom: .5em;
-}
-
-img.media-object{
-    border: none;
-}
-
-#news {
+main {
+  max-width: 42rem; 
   width: 100%;
 }
 
-#news p.collapse[aria-expanded="false"] {
-    display: block;
-    height: 80px !important;
-    overflow: hidden;
-    visibility: visible;
+/* --- Navigation --- */
+header {
+  margin-bottom: 3.5rem;
 }
 
-#news p.collapsing[aria-expanded="false"] {
-    height: 80px !important;
+nav {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
 }
 
-/* This overrides the show less command below 
-and enables correct linking inside the news paragraphs */
-#news #collapseExample a:after  {
-    content: " ";
-
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration-thickness 0.2s ease;
+  cursor: pointer;
 }
 
-#news a.collapsed:after  {
-    content: '+ Show More';
+nav a:hover, nav a.active {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
 
-#news a:not(.collapsed):after {
-    content: '- Show Less';
+nav a.active {
+  font-weight: 600;
+  text-decoration-thickness: 2px;
+}
+
+/* --- Page Sections (SPA Logic) --- */
+.page-section {
+  display: none;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.page-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Typography & Links --- */
+h1, h2, h3 {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 3.5rem 0 1.5rem 0;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 0.5rem;
+}
+
+/* First H2 in a section shouldn't have massive top margin */
+.page-section h2:first-of-type {
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration-thickness: 2px;
+}
+
+.sc {
+  font-variant-caps: all-small-caps;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: lowercase; 
+  font-variant: small-caps;
+}
+
+/* --- News / Timeline Section --- */
+.news-item {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.news-date {
+  font-family: var(--font-ui);
+  color: var(--text-muted);
+  text-align: right;
+  font-size: 0.9rem;
+  padding-top: 0.2rem;
+}
+
+.news-content p {
+  margin-bottom: 0;
+}
+
+/* --- Publications / General Items Section --- */
+.list-item {
+  margin-bottom: 2.5rem; 
+}
+
+.item-title {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.item-title a {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.item-title a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.item-subtitle {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 0.25rem 0;
+}
+
+.item-venue {
+  font-size: 1rem;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.item-award {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  background: #f0f4f8;
+  color: #0056b3;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  font-weight: 500;
+}
+
+.item-links {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.item-links a {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.item-links a:hover {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .news-date {
+    text-align: left;
+    padding-top: 0;
+  }
+}
+/* --- Cards --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.card-content {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.card-title a {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.card-title a:hover {
+  color: var(--link-color);
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 1rem 0;
+  flex: 1;
+}
+
+.card .item-links {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 800px) {
+  .selected-works-section {
+    width: 65rem;
+    max-width: 90vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
