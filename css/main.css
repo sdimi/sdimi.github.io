@@ -37,7 +37,7 @@ header {
 
 nav {
   font-family: var(--font-ui);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
@@ -321,4 +321,21 @@ a:hover {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+/* --- Year Anchors --- */
+.year-heading {
+  position: relative;
+}
+.year-anchor {
+  position: absolute;
+  left: -1.75rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: normal;
+}
+.year-anchor:hover {
+  color: var(--text-main);
+  text-decoration: none;
 }
